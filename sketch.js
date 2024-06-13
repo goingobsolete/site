@@ -1,6 +1,7 @@
 
 let isDrawing = false;
-initialText = "CLICK / TOUCH TO DRAW"
+let initialText = "CLICK / TOUCH TO DRAW";
+let hasBGCleared = false;
 let brushSizeX;
 let brushSizeY;
 function setup() {
@@ -40,7 +41,10 @@ function draw() {
 //These commands control when the mouse or cursor is drawing
 function mousePressed() {
   isDrawing = true;
-  background(255);
+  if(!hasBGCleared) {
+    background(255)
+    hasBGCleared = true;
+  }
 }
 
 function mouseReleased() {
@@ -50,7 +54,10 @@ function mouseReleased() {
 // these touch functions - specifically the "return false" disables the default functions of what moving your finger across a touch screen. In this case it won't scroll, just draw.
 function touchStarted() {
   isDrawing = true;
-  background(255);
+  if(!hasBGCleared) {
+    background(255)
+    hasBGCleared = true;
+  }
   return false;
 }
 
