@@ -1,6 +1,6 @@
 
 let isDrawing = false;
-initialText = "CLICK / TOUCH TO"
+initialText = "CLICK / TOUCH TO DRAW"
 let brushSizeX;
 let brushSizeY;
 function setup() {
