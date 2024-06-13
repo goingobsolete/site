@@ -5,12 +5,12 @@ let brushSizeX;
 let brushSizeY;
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(0); // Set initial background to white
+  background(241,241,241); // Set initial background to white
   textSize(width / 15);
   textFont('Helvetica');
   textAlign(CENTER, CENTER);
-  fill(255); // Set text color to black
-  text(initialText, width / 2, height / 2); // Draw initial text
+  fill(255,0,0); // Set text color to black
+  text(initialText, width / 2, height / 2.5); // Draw initial text
 
 }
 
