@@ -1,9 +1,8 @@
 
 let isDrawing = false;
 
-
-let brushSizeX = 30;
-let brushSizeY = 30
+let brushSizeX;
+let brushSizeY;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
@@ -16,14 +15,11 @@ function draw() {
   noStroke();
   brushSizeX = random(100);
   brushSizeY = random(100);
-  if (isDrawing) {
-    ellipse(mouseX, mouseY, brushSizeX, brushSizeY);
-  }
   
   
   // Draw a circle at the mouse position to reveal the text
-  // if (mouseIsPressed) {
-  //   ellipse(mouseX, mouseY, brushSizeX, brushSizeY);
+  if (isDrawing) {
+    ellipse(mouseX, mouseY, brushSizeX, brushSizeY);
     
   push();
   textSize(width/6);
@@ -34,4 +30,29 @@ function draw() {
   pop();
 
   }
+}
+
+//These commands control when the mouse or cursor is drawing
+function mousePressed() {
+  isDrawing = true;
+}
+
+function mouseReleased() {
+  isDrawing = false;
+}
+
+// these touch functions - specifically the "return false" disables the default functions of what moving your finger across a touch screen. In this case it won't scroll, just draw.
+function touchStarted() {
+  isDrawing = true;
+  return false;
+}
+
+function touchMoved() {
+  isDrawing = true;
+  return false;
+}
+
+function touchEnded() {
+  isDrawing = false;
+  return false;
 }
