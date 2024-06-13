@@ -7,7 +7,7 @@ function setup() {
 }
 
 function draw() {
-  // Set the brush color to black
+  // Set the brush random blue-purple color and random opactiy up to 100/255
   fill(random(100),random(0),random(255), random(100));
   noStroke();
   brushSizeX = random(100);
