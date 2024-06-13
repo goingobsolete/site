@@ -1,11 +1,16 @@
 
 let isDrawing = false;
-
+initialText = "CLICK / TOUCH TO DRAW"
 let brushSizeX;
 let brushSizeY;
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(255);
+  background(0); // Set initial background to white
+  textSize(width / 15);
+  textFont('Helvetica');
+  textAlign(CENTER, CENTER);
+  fill(255); // Set text color to black
+  text(initialText, width / 2, height / 2); // Draw initial text
 
 }
 
@@ -35,6 +40,7 @@ function draw() {
 //These commands control when the mouse or cursor is drawing
 function mousePressed() {
   isDrawing = true;
+  background(255);
 }
 
 function mouseReleased() {
@@ -44,6 +50,7 @@ function mouseReleased() {
 // these touch functions - specifically the "return false" disables the default functions of what moving your finger across a touch screen. In this case it won't scroll, just draw.
 function touchStarted() {
   isDrawing = true;
+  background(255);
   return false;
 }
 
