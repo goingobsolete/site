@@ -33,10 +33,10 @@ function setup() {
   // Display initial text on the canvas
   text(initialText, width / 2, height / 2.5);
 
-  // Create export button
-  let exportButton = createButton('Export as PNG');
-  exportButton.position(20, 20);
-  exportButton.mousePressed(exportCanvas);
+  // // Create export button
+  // let exportButton = createButton('Export as PNG');
+  // exportButton.position(20, 20);
+  // exportButton.mousePressed(exportCanvas);
 }
 
 function draw() {
