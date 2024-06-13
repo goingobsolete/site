@@ -1,3 +1,7 @@
+
+let isDrawing = false;
+
+
 let brushSizeX = 30;
 let brushSizeY = 30
 function setup() {
@@ -12,13 +16,14 @@ function draw() {
   noStroke();
   brushSizeX = random(100);
   brushSizeY = random(100);
-  // brushSizeX = 30;
-  // brushSizeY = 30;
+  if (isDrawing) {
+    ellipse(mouseX, mouseY, brushSizeX, brushSizeY);
+  }
   
   
   // Draw a circle at the mouse position to reveal the text
-  if (mouseIsPressed) {
-    ellipse(mouseX, mouseY, brushSizeX, brushSizeY);
+  // if (mouseIsPressed) {
+  //   ellipse(mouseX, mouseY, brushSizeX, brushSizeY);
     
   push();
   textSize(width/6);
