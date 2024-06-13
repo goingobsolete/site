@@ -1,82 +1,122 @@
-
+// Boolean variable to track whether drawing is active
 let isDrawing = false;
+
+// Initial text displayed before any drawing action
 let initialText = "CLICK / TOUCH TO DRAW";
+
+// Boolean flag to track if the background has been cleared once
 let hasBGCleared = false;
+
+// Variables to dynamically store brush (ellipse) size
 let brushSizeX;
 let brushSizeY;
+
 function setup() {
+  // Create a canvas that fills the entire window
   createCanvas(windowWidth, windowHeight);
-  background(241,241,241); // Set initial background to white
+
+  // Set initial background color to a light gray
+  background(241, 241, 241);
+
+  // Set text size relative to canvas width
   textSize(width / 15);
+
+  // Set text font to Helvetica
   textFont('Helvetica');
+
+  // Center-align text horizontally and vertically
   textAlign(CENTER, CENTER);
-  fill(255,0,0); // Set text color to black
-  text(initialText, width / 2, height / 2.5); // Draw initial text
+
+  // Set text color to red
+  fill(255, 0, 0);
+
+  // Display initial text on the canvas
+  text(initialText, width / 2, height / 2.5);
 
   // Create export button
   let exportButton = createButton('Export as PNG');
   exportButton.position(20, 20);
   exportButton.mousePressed(exportCanvas);
-
 }
 
 function draw() {
-  // Set the brush random blue-purple color and random opactiy up to 100/255
-  fill(random(100),random(0),random(255), random(100));
+  // Set the fill color to a random blue-purple shade with random opacity
+  fill(random(100), random(0), random(255), random(100));
+
+  // Disable stroke (outline) for shapes
   noStroke();
+
+  // Dynamically set brush size within a random range
   brushSizeX = random(100);
   brushSizeY = random(100);
-  
-  
-  // Draw a circle at the mouse position to reveal the text
+
+  // Draw a circle at the mouse position when drawing is active
   if (isDrawing) {
     ellipse(mouseX, mouseY, brushSizeX, brushSizeY);
     
-  push();
-  textSize(width/6);
-  textFont('Helvetica');
-  textAlign(CENTER, CENTER);
-  fill(255);
-  text("A D A E L", width / 2, height / 2);
-  pop();
-
+    // Display large text "A D A E L" at the center of the canvas
+    push();
+    textSize(width/6);
+    textFont('Helvetica');
+    textAlign(CENTER, CENTER);
+    fill(255);
+    text("A D A E L", width / 2, height / 2);
+    pop();
   }
 }
 
-//These commands control when the mouse or cursor is drawing
+// Event handler triggered when mouse button is pressed
 function mousePressed() {
+  // Enable drawing mode
   isDrawing = true;
-  if(!hasBGCleared) {
-    background(255)
+
+  // Clear the canvas background only once at the start of drawing
+  if (!hasBGCleared) {
+    background(255);
     hasBGCleared = true;
   }
 }
 
+// Event handler triggered when mouse button is released
 function mouseReleased() {
+  // Disable drawing mode
   isDrawing = false;
 }
 
-// these touch functions - specifically the "return false" disables the default functions of what moving your finger across a touch screen. In this case it won't scroll, just draw.
+// Event handler triggered when touch begins on the screen
 function touchStarted() {
+  // Enable drawing mode
   isDrawing = true;
-  //this stops the background from refreshing more than once after drawing has started
-  if(!hasBGCleared) {
-    background(255)
+
+  // Clear the canvas background only once at the start of drawing
+  if (!hasBGCleared) {
+    background(255);
     hasBGCleared = true;
   }
+
+  // Prevent default touch behavior (like scrolling)
   return false;
 }
 
+// Event handler triggered when touch moves on the screen
 function touchMoved() {
+  // Enable drawing mode
   isDrawing = true;
+
+  // Prevent default touch behavior (like scrolling)
   return false;
 }
 
+// Event handler triggered when touch ends on the screen
 function touchEnded() {
+  // Disable drawing mode
   isDrawing = false;
+
+  // Prevent default touch behavior (like scrolling)
   return false;
 }
 
+// Function to export the current canvas as a PNG image
 function exportCanvas() {
   saveCanvas('myDrawing', 'png');
 }
