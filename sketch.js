@@ -13,6 +13,11 @@ function setup() {
   fill(255,0,0); // Set text color to black
   text(initialText, width / 2, height / 2.5); // Draw initial text
 
+  // Create export button
+  let exportButton = createButton('Export as PNG');
+  exportButton.position(20, 20);
+  exportButton.mousePressed(exportCanvas);
+
 }
 
 function draw() {
@@ -54,6 +59,7 @@ function mouseReleased() {
 // these touch functions - specifically the "return false" disables the default functions of what moving your finger across a touch screen. In this case it won't scroll, just draw.
 function touchStarted() {
   isDrawing = true;
+  //this stops the background from refreshing more than once after drawing has started
   if(!hasBGCleared) {
     background(255)
     hasBGCleared = true;
@@ -69,4 +75,8 @@ function touchMoved() {
 function touchEnded() {
   isDrawing = false;
   return false;
+}
+
+function exportCanvas() {
+  saveCanvas('myDrawing', 'png');
 }
