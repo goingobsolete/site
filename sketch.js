@@ -12,27 +12,25 @@ let brushSizeX;
 let brushSizeY;
 
 function setup() {
-  // Create a canvas that fills the entire window
   createCanvas(windowWidth, windowHeight);
-
-  // Set initial background color to a light gray
   background(255);
-
-  // Set text size relative to canvas width
   textSize(width / 30);
-
-  // Set text font to Helvetica
   textFont('Georgia');
-
-  // Center-align text horizontally and vertically
   textAlign(CENTER, CENTER);
-
-  // Set text color to black
   fill(0);
 
-  // Display initial text on the canvas
-  text(initialText, width / 2, height / 2);
+  // Split the initialText into an array of lines
+  let lines = initialText.split('\n');
+  // Calculate the total height of the text block
+  let textHeight = lines.length * (textAscent() + textDescent()) + (lines.length - 1) * (textSize() / 5);
+  // Starting Y position to center the text block vertically
+  let startY = (height - textHeight) / 2;
 
+  // Display each line of text
+  for (let i = 0; i < lines.length; i++) {
+    let posY = startY + i * (textAscent() + textDescent() + textSize() / 5);
+    text(lines[i], width / 2, posY);
+  }
 }
 
 function draw() {
