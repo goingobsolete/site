@@ -13,7 +13,7 @@ let brushSizeY;
 
 function setup() {
   // Create a canvas that fills the entire window
-  createCanvas(windowWidth-(windowWidth/50), windowHeight-(windowHeight/50));
+  createCanvas(windowWidth, windowHeight);
 
   // Set initial background color to a light gray
   background(255);
@@ -62,6 +62,13 @@ function draw() {
     fill(255);
     text("A D A E L", width / 2, height / 2);
     pop();
+
+    push();
+    textSize(width/20);
+    textFont('Helvetica');
+    textAlign(CENTER, CENTER);
+    fill(255);
+
   }
 }
 
