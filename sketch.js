@@ -33,10 +33,6 @@ function setup() {
   // Display initial text on the canvas
   text(initialText, width / 2, height / 2.5);
 
-  // // Create export button
-  // let exportButton = createButton('Export as PNG');
-  // exportButton.position(20, 20);
-  // exportButton.mousePressed(exportCanvas);
 }
 
 function draw() {
@@ -60,14 +56,15 @@ function draw() {
     textFont('Helvetica');
     textAlign(CENTER, CENTER);
     fill(255);
-    text("A D A E L", width / 2, height / 2);
+    text("A D A E L", width / 2, height / 2.5);
     pop();
 
     push();
     textSize(width/20);
-    textFont('Helvetica');
+    textFont('Georgia');
     textAlign(CENTER, CENTER);
     fill(255);
+    text('Happy Birthday!', width / 2, height / 1.5);
 
   }
 }
