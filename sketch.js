@@ -2,7 +2,7 @@
 let isDrawing = false;
 
 // Initial text displayed before any drawing action
-let initialText = "Happy Birthday!\nI thought this domain name\nmight come in handy ;)\nLets mess around with this code\nto make it your own.\nI hope you like what I made for now.\nLove,\nPaul\n\n***CLICK / TOUCH TO DRAW***";
+let initialText = "\n\nHappy Birthday!\nI thought this domain name\nmight come in handy ;)\nLets mess around with this code\nto make it your own.\nI hope you like what I made for now.\nLove,\nPaul\n\n***CLICK / TOUCH TO DRAW***\n\n";
 
 // Boolean flag to track if the background has been cleared once
 let hasBGCleared = false;
@@ -19,7 +19,7 @@ function setup() {
   background(255);
 
   // Set text size relative to canvas width
-  textSize(width / 20);
+  textSize(width / 30);
 
   // Set text font to Helvetica
   textFont('Georgia');
