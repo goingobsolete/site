@@ -13,13 +13,13 @@ let brushSizeY;
 
 function setup() {
   // Create a canvas that fills the entire window
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth-(windowWidth/50), windowHeight-(windowHeight/50));
 
   // Set initial background color to a light gray
-  background(241, 241, 241);
+  background(255);
 
   // Set text size relative to canvas width
-  textSize(width / 15);
+  textSize(width / 20);
 
   // Set text font to Helvetica
   textFont('Helvetica');
@@ -27,8 +27,8 @@ function setup() {
   // Center-align text horizontally and vertically
   textAlign(CENTER, CENTER);
 
-  // Set text color to red
-  fill(255, 0, 0);
+  // Set text color to black
+  fill(0);
 
   // Display initial text on the canvas
   text(initialText, width / 2, height / 2.5);
