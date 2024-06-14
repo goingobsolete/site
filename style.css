@@ -1,20 +1,7 @@
-.canvas-container {
-  position: relative; /* Ensures that absolute positioning is relative to this container */
-  width: 100%;
-  height: auto; /* Adjust based on your canvas size or make it dynamic */
+html, body {
+  margin: 0;
+  padding: 0;
 }
-
-.button-container {
-  position: absolute; /* Absolute positioning within the canvas-container */
-  right: 10px; /* Distance from the right edge of the canvas-container */
-  bottom: 10px; /* Distance from the bottom edge of the canvas-container */
-}
-
-.export-button {
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
+canvas {
+  display: block;
 }
