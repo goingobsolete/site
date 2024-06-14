@@ -2,7 +2,7 @@
 let isDrawing = false;
 
 // Initial text displayed before any drawing action
-let initialText = "CLICK / TOUCH TO DRAW";
+let initialText = "Happy Birthday!\nI thought this domain name\nmight come in handy ;)\nLets mess around with this code\nto make it your own.\nI hope you like what I made for now.\nLove,\nPaul\n\n***CLICK / TOUCH TO DRAW***";
 
 // Boolean flag to track if the background has been cleared once
 let hasBGCleared = false;
@@ -22,7 +22,7 @@ function setup() {
   textSize(width / 20);
 
   // Set text font to Helvetica
-  textFont('Helvetica');
+  textFont('Georgia');
 
   // Center-align text horizontally and vertically
   textAlign(CENTER, CENTER);
@@ -31,7 +31,7 @@ function setup() {
   fill(0);
 
   // Display initial text on the canvas
-  text(initialText, width / 2, height / 2.5);
+  text(initialText, width / 2, height / 2);
 
 }
 
@@ -56,15 +56,8 @@ function draw() {
     textFont('Helvetica');
     textAlign(CENTER, CENTER);
     fill(255);
-    text("A D A E L", width / 2, height / 2.5);
+    text("A D A E L", width / 2, height / 2);
     pop();
-
-    push();
-    textSize(width/20);
-    textFont('Georgia');
-    textAlign(CENTER, CENTER);
-    fill(255);
-    text('Happy Birthday!', width / 2, height / 1.5);
 
   }
 }
